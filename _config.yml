@@ -1,6 +1,6 @@
 # Site Info
-title: Camon BLOG
-tagline: 'Camon blog'
+title: 카몬 블로그
+tagline: 'Camon Blog'
 description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
 baseurl: ""
 url: http://camon85.github.io
@@ -31,8 +31,7 @@ author:
     #linkedin:  https://www.linkedin.com/in/lizhihao
     github:    https://github.com/camon85
     # facebook:  <hide>
-    email:     http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=
-
+    email:     http://www.google.com/recaptcha/mailhide/d?k=019csu4eVzJbvc1nXWueVk-w==&c=UvGJtCac4rz-w4YrJvwBEF3B9V2bNZBVKOhu3tDRXAY=
 # Navigation (2nd level links supported)
 nav:
   Home:           
