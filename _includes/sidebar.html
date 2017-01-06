@@ -7,11 +7,10 @@
   <div class="sidebar-item">
     <div class="sidebar-personal-info">
       <div class="sidebar-personal-info-section">
-        <a href="http://gravatar.com/{{ site.author.gravatar }}">
-          <img src="http://www.gravatar.com/avatar/{{ site.author.gravatar }}?s=350" title="View on Gravatar" alt="View on Gravatar" />
-        </a>
+        <img src="{{ site.author.picture }}" title="{{ site.author.name }}" alt="{{ site.author.name }}" />
       </div>
       <div class="sidebar-personal-info-section">
+        <p>{{ site.author.name }}</p>
         <p>{{ site.author.description }}</p>
       </div>
       {% if site.author.contact %}
