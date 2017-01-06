@@ -1,6 +1,6 @@
 # Site Info
 title: Camon BLOG
-tagline: 'A Jekyll theme based on Lanyon'
+tagline: 'Camon blog'
 description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
 baseurl: ""
 url: http://camon85.github.io
@@ -25,7 +25,7 @@ version: 1.0.0
 # About/contact
 author:
   name: JooYong Sung
-  description: <strong>developer</strong>.
+  description: <strong>developer</strong>
   gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
   contact:
     #linkedin:  https://www.linkedin.com/in/lizhihao
@@ -56,6 +56,6 @@ hero:
 
 # Puglins
 mathjax: true # whether support mathjax
-google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
+google_analytics_token: 'UA-89936269-1' # leave blank if you don't want google analytics
 disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
 
