@@ -58,7 +58,7 @@ REPL(read-evaluate-print loop) 모드에서 소스파일을 불러서 실행해 
 > res0: Int = 42
 
 
-### 고차함수(higher-order function)
+### 고차 함수(higher-order function)
 함수를 함수에 전달. 함수도 변수에 담거나 함수에 인수로 넘겨줄 수 있다.
 
 
@@ -83,7 +83,7 @@ go의 결과에 대해 1을 더하는 일을 수행해야 하기 때문이다.
 
 <div class="message">
 <strong>연습문제 2.1</strong><br/>
-n번째 <a href="https://ko.wikipedia.org/wiki/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98_%EC%88%98" target="_blank">피보나치 수(Fibonacci number)</a>를 돌려주는 재귀 함수를 작성하라. 처음 두 피보나치 수는 0과 1이다. n번째 피보나치 수는 항상 이전 두 수의 합이다. 즉, 피보나치 수열은 0, 1, 2, 3, 5로 시작한다. 반드시 지역 꼴 재귀 함수를 사용해서 작성할 것.
+n번째 <a href="https://ko.wikipedia.org/wiki/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98_%EC%88%98" target="_blank">피보나치 수(Fibonacci number)</a>를 돌려주는 재귀 함수를 작성하라. 처음 두 피보나치 수는 0과 1이다. n번째 피보나치 수는 항상 이전 두 수의 합이다. 즉, 피보나치 수열은 0, 1, 2, 3, 5로 시작한다. 반드시 지역 꼬리 재귀 함수를 사용해서 작성할 것.
 </div>
 
 ### 고차 함수 작성
