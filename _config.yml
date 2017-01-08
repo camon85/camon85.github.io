@@ -49,12 +49,13 @@ nav:
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
-hero:
-  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+main:
+  image: /public/img/fukuro.jpg
+  caption: fukuro no mori
+
 
 # Puglins
-mathjax: true # whether support mathjax
+#mathjax: true # whether support mathjax
 google_analytics_token: 'UA-89936269-1' # leave blank if you don't want google analytics
 disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
 
