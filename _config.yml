@@ -50,8 +50,8 @@ tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
 main:
-  image: /public/img/fukuro.jpg
-  caption: fukuro no mori
+  image: /public/img/smooth-spiral@2x.png
+  caption: scala logo
 
 
 # Puglins
