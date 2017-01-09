@@ -83,8 +83,11 @@ go의 결과에 대해 1을 더하는 일을 수행해야 하기 때문이다.
 
 <div class="message">
 <strong>연습문제 2.1</strong><br/>
-n번째 <a href="https://ko.wikipedia.org/wiki/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98_%EC%88%98" target="_blank">피보나치 수(Fibonacci number)</a>를 돌려주는 재귀 함수를 작성하라. 처음 두 피보나치 수는 0과 1이다. n번째 피보나치 수는 항상 이전 두 수의 합이다. 즉, 피보나치 수열은 0, 1, 2, 3, 5로 시작한다. 반드시 지역 꼬리 재귀 함수를 사용해서 작성할 것.
+n번째 <a href="https://ko.wikipedia.org/wiki/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98_%EC%88%98" target="_blank">피보나치 수(Fibonacci number)</a>를 돌려주는 재귀 함수를 작성하라. 처음 두 피보나치 수는 0과 1이다. n번째 피보나치 수는 항상 이전 두 수의 합이다. 즉, 피보나치 수열은 0, 1, 1, 2, 3, 5로 시작한다. 반드시 지역 꼬리 재귀 함수를 사용해서 작성할 것.
 </div>
+
+<script src="https://gist.github.com/camon85/5185244359946811afd5529deb824095.js"></script>
+<script src="https://gist.github.com/camon85/7465cc1dab36533eee84eaf0484fcf0a.js"></script>
 
 ### 고차 함수 작성
 {% highlight scala %}
