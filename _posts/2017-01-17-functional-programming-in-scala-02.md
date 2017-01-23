@@ -137,10 +137,9 @@ def findFirst[A](as: Array[A], p: A => Boolean): Int = {
 {% endhighlight %}
 
 
-### 익명 함수로 고차함수 호출
-
 
 ### 부분 적용(partial application)
+32p
 
 
 ### 커링(curring)
