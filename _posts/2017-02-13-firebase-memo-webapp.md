@@ -6,7 +6,7 @@ tags: [firebase]
 ---
 
 인프런의 무료 강의를 보고 따라해 보았다.
-https://www.inflearn.com/course/%ED%8C%8C%EC%9D%B4%EC%96%B4%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B0%95%EC%A2%8C-%EC%9B%B9-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98/
+> [강의링크](https://www.inflearn.com/course/%ED%8C%8C%EC%9D%B4%EC%96%B4%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B0%95%EC%A2%8C-%EC%9B%B9-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98/)
 
 강의는 1시간20분짜리이고, 실습까지 포함하여 2시간 정도 걸렸다.
 
@@ -24,5 +24,6 @@ firebase가 실시간 db만 제공하는 것이 아니라 정적 웹 페이지 �
  
 > [결과 웹 페이지](https://api-6590514862941279208-75005.firebaseapp.com/)
 
+---
 ![데모](../public/img/firebase-memo-web-app.PNG)
-
+---
