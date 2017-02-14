@@ -33,3 +33,9 @@ tags: [scala, fp, study]
 
 
 
+
+
+### java의 Math.abs() 버그?
+최소값의 절대값이 음수로 나온다.
+처리하기 애매한건 알겠지만 이건 버그 아닌가?
+<script src="https://gist.github.com/camon85/74c644f589f218c65a2973c3d8287334.js"></script>
