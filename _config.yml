@@ -50,8 +50,8 @@ tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
 main:
-  image: /public/img/smooth-spiral@2x.png
-  caption: scala logo
+  image: /public/logo.jpg
+  caption: logo
 
 
 # Puglins
