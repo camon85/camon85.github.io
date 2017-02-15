@@ -78,7 +78,7 @@ exit로 bash쉘에서 빠져나오면 우분투 이미지에서 bash 실행 파�
 
 컨테이너 실행
 
-* docker attach toybunt
+* docker attach toybuntu
 
 엔터를 한번 더 쳐주면 컨테이너에 접속된다.
 이때도 bash 쉘로 접속되기 때문에 exit로 빠져나오면 컨테이너가 종료된다.
