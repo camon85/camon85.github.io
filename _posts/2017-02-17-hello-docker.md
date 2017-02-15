@@ -48,16 +48,16 @@ api서버, 크론 작업 등 상태를 저장하지 않는 애플리케이션에
 [공식 홈페이지 참조](https://www.docker.com/products/overview)
 
 # 도커 써보기
-* docker pull ubuntu:latest
 
-ubuntu latest버전의 도커 이미지 다운받기
+### ubuntu latest버전의 도커 이미지 다운받기
+* docker pull ubuntu:latest
 ![pull](../public/img/docker_pull.png)
 
+### 도커 이미지 보기
 * docker images
-
-도커 이미지 보기
 ![images](../public/img/docker_images.png)
 
+### 도커 컨테이너 실행
 * docker run -i -t --name toybuntu ubuntu /bin/bash
 
 > -i (interative), -t (pseude-tty) 실행된 bash 쉘에 입력 및 출력 가능. 
@@ -66,30 +66,25 @@ exit로 bash쉘에서 빠져나오면 우분투 이미지에서 bash 실행 파�
 ![run](../public/img/docker_run.png)
 
 
+### 실행중인 컨테이너 보기
 * docker ps 
 
-실행중인 컨테이너 보기
-
+### 실행종료된 컨테이너 포함하여 보기
 * docker ps -a 
 
-실행종료된 컨테이너 포함하여 보기
-
+### 컨테이너 실행
 * docker start toybuntu
 
-컨테이너 실행
-
+### 컨테이너 접속
 * docker attach toybuntu
 
 엔터를 한번 더 쳐주면 컨테이너에 접속된다.
 이때도 bash 쉘로 접속되기 때문에 exit로 빠져나오면 컨테이너가 종료된다.
 Ctrl+P , Ctrl+Q를 눌러서 빠져나오면 컨테이너가 종료되지 않는다.
 
-
+### 컨테이너 외부에서 명령어 실행
 * docker exec toybuntu ls -al
-
-컨테이너 외부에서 명령어 실행시키기.
 ![exec](../public/img/docker_exec.png)
-
 
 
 ... 작성중 ...
