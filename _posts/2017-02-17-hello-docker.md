@@ -49,14 +49,17 @@ api서버, 크론 작업 등 상태를 저장하지 않는 애플리케이션에
 
 # 도커 써보기
 * docker pull ubuntu:latest
+
 ubuntu latest버전의 도커 이미지 다운받기
 ![pull](../public/img/docker_pull.png)
 
 * docker images
+
 도커 이미지 보기
 ![images](../public/img/docker_images.png)
 
 * docker run -i -t --name toybuntu ubuntu /bin/bash
+
 > -i (interative), -t (pseude-tty) 실행된 bash 쉘에 입력 및 출력 가능. 
 --name 옵션으로 컨테이너에 이름을 지정할 수 있다. 이름을 지정하지 않으면 랜던한 이름을 생성해준다.
 exit로 bash쉘에서 빠져나오면 우분투 이미지에서 bash 실행 파일을 실행 했기 때문에 컨테이너가 stop 된다.
