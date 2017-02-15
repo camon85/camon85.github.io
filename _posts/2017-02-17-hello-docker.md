@@ -60,9 +60,12 @@ api서버, 크론 작업 등 상태를 저장하지 않는 애플리케이션에
 ### 도커 컨테이너 실행
 * docker run -i -t --name toybuntu ubuntu /bin/bash
 
-> -i (interative), -t (pseude-tty) 실행된 bash 쉘에 입력 및 출력 가능. 
+-i (interative), -t (pseude-tty) 실행된 bash 쉘에 입력 및 출력 가능.
+ 
 --name 옵션으로 컨테이너에 이름을 지정할 수 있다. 이름을 지정하지 않으면 랜던한 이름을 생성해준다.
+
 exit로 bash쉘에서 빠져나오면 우분투 이미지에서 bash 실행 파일을 실행 했기 때문에 컨테이너가 stop 된다.
+
 ![run](../public/img/docker_run.png)
 
 
@@ -102,6 +105,7 @@ os올리고 자바 설치하고 스프링부트로 작성된 jar실행 정도면
 
 --------------
 이런 내용은 일단 다 뺴버릴까
+
 docker create와 docker run은 둘다 초기 컨테이너 셋업에 관한 옵션들을 모두 포함하고 있다.
 
 docker diff
