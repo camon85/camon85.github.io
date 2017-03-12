@@ -18,7 +18,7 @@ tags: [docker]
 6. 운영 엔지니어들이 추가적인 요구 사항을 설치하기 위해 작업한다.
 7. 5와 6을 필요한 만큼 반복한다.
 8. 애플리케이션을 배포한다.
-![전통적인 배포 워크플로우](../public/img/deploy_workfolw.png)
+![전통적인 배포 워크플로우](/public/img/deploy_workfolw.png)
 
 * 클라우드 도입으로 커뮤니케이션 비용이 많이 줄어들긴 했지만 여전히 간단한 작업은 아니다.
 개발팀이 나중에 할 수 있는 개선 작업도 제한된다. 
@@ -27,7 +27,7 @@ tags: [docker]
 1. 개발자들은 도커 이미지를 빌드하여 레지스트리에 보낸다.
 2. 운영 엔지니어들은 컨테이너에 세부 설정을 제공하고 자원을 배분한다.
 3. 개발자들이 배포를 시작한다.
-![도커 배포 워크플로우](../public/img/docker_deploy_workfolw.png)
+![도커 배포 워크플로우](/public/img/docker_deploy_workfolw.png)
 
 
 # stateless한 애플리케이션에 적합하다.
@@ -51,11 +51,11 @@ api서버, 크론 작업 등 상태를 저장하지 않는 애플리케이션에
 
 ### ubuntu latest버전의 도커 이미지 다운받기
 * docker pull ubuntu:latest
-![pull](../public/img/docker_pull.png)
+![pull](/public/img/docker_pull.png)
 
 ### 도커 이미지 보기
 * docker images
-![images](../public/img/docker_images.png)
+![images](/public/img/docker_images.png)
 
 ### 도커 컨테이너 실행
 * docker run -i -t --name toybuntu ubuntu /bin/bash
@@ -66,7 +66,7 @@ api서버, 크론 작업 등 상태를 저장하지 않는 애플리케이션에
 
 exit로 bash쉘에서 빠져나오면 우분투 이미지에서 bash 실행 파일을 실행 했기 때문에 컨테이너가 stop 된다.
 
-![run](../public/img/docker_run.png)
+![run](/public/img/docker_run.png)
 
 
 ### 실행중인 컨테이너 보기
@@ -87,7 +87,7 @@ Ctrl+P , Ctrl+Q를 눌러서 빠져나오면 컨테이너가 종료되지 않는
 
 ### 컨테이너 외부에서 명령어 실행
 * docker exec toybuntu ls -al
-![exec](../public/img/docker_exec.png)
+![exec](/public/img/docker_exec.png)
 
 
 

@@ -26,5 +26,5 @@ firebase가 실시간 db만 제공하는 것이 아니라 정적 웹 페이지 �
 > [결과 웹 페이지](https://api-6590514862941279208-75005.firebaseapp.com/)
 
 ---
-![데모](../public/img/firebase-memo-web-app.PNG)
+![데모](/public/img/firebase-memo-web-app.PNG)
 ---
