@@ -39,7 +39,7 @@ tags: [guava]
   }
 ```
 
-### Multimap은 Map은 아니다.
+### Multimap은 Map이 아니다.
 Multimap 구현체
 
 - ArrayListMultimap
