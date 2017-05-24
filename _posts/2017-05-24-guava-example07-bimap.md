@@ -1,6 +1,6 @@
 ---
 layout: post
-title: guava example - CaseFormat, CharMatcher
+title: guava example - BiMap
 category: dev
 tags: [guava]
 ---
