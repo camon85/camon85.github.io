@@ -72,3 +72,4 @@ tags: [guava]
 
     assertNotNull(inversedBiMap.get("migum"));
   }
+```

@@ -113,6 +113,3 @@ tags: [guava]
     assertEquals(2, leastOfTeam.size());
   }
 ```
-
-
-[view source](https://github.com/camon85/guava-example)
