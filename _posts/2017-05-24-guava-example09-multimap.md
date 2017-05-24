@@ -40,7 +40,7 @@ tags: [guava]
 ```
 
 ### Multimap은 Map은 아니다.
-* Multimap 구현체
+Multimap 구현체
 
 - ArrayListMultimap
 
