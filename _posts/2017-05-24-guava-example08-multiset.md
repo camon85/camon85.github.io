@@ -1,13 +1,13 @@
 ---
-layout: post
 title: guava example - Multiset
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
 [view source](https://github.com/camon85/guava-example)
 
 ### plain java로 단어수를 카운트 하는 방법
+
 ```java
   @Test
   public void wordCountTest() throws Exception {
@@ -36,6 +36,7 @@ tags: [guava]
 ```
 
 ### Multiset으로 단어수를 카운트 하는 방법
+
 ```java
   @Test
   public void wordCountByMultiSetTest() throws Exception {
@@ -62,6 +63,7 @@ tags: [guava]
 ```
 
 ### 다양한 API 제공
+
 ```java
   @Test
   public void queryTest() throws Exception {

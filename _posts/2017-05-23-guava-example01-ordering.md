@@ -1,16 +1,16 @@
 ---
-layout: post
 title: guava example - Ordering
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
 [view source](https://github.com/camon85/guava-example)
 
-
 ### null이 포함된 collection의 경우
-처리해주지 않으면 NullPointerException이 발생하기 때문에 null 값을 
-앞으로 보낼지 뒤로 보낼지를 결정해주어야 한다. nullsFirst(), nullsLast() 둘중 하나를 사용해야 한다.   
+
+처리해주지 않으면 NullPointerException이 발생하기 때문에 null 값을
+앞으로 보낼지 뒤로 보낼지를 결정해주어야 한다. nullsFirst(), nullsLast() 둘중 하나를 사용해야 한다.
+
 ```java
   @Test
   public void withNullTest() throws Exception {
@@ -22,8 +22,8 @@ tags: [guava]
   }
 ```
 
-
 ### custom object의 정렬
+
 ```java
   @Test
   public void customOrderTest() throws Exception {
@@ -48,6 +48,7 @@ tags: [guava]
 ```
 
 ### function 처리 후의 결과값을 정렬
+
 ```java
   @Test
   public void onResultOfTest() throws Exception {
@@ -70,6 +71,7 @@ tags: [guava]
 ```
 
 ### 기존 collection을 변경하지 않고 정렬된 새로운 collection 생성
+
 ```java
   @Test
   public void sortedCopyTest() throws Exception {
@@ -93,6 +95,7 @@ tags: [guava]
 ```
 
 ### 정렬 후 원하는 개수만큼 리턴 (java8 stream의 limit 느낌)
+
 ```java
   @Test
   public void leastOfTest() throws Exception {

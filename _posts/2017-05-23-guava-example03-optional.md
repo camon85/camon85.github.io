@@ -1,13 +1,13 @@
 ---
-layout: post
 title: guava example - Optional
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
 [view source](https://github.com/camon85/guava-example)
 
 ### null 체크 대신 isPresent() 사용
+
 ```java
     @Test
     public void nameTest() throws Exception {
@@ -27,6 +27,7 @@ tags: [guava]
 ```
 
 ### null인 경우 기본값을 세팅하면 더 편리하다.
+
 ```java
     @Test
     public void orTest() throws Exception {

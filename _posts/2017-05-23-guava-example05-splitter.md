@@ -1,13 +1,13 @@
 ---
-layout: post
 title: guava example - Splitter
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
 [view source](https://github.com/camon85/guava-example)
 
 ### string을 구분자를 통해 Iterable 객체로 변경
+
 ```java
     @Test
     public void splitTest() throws Exception {
@@ -18,7 +18,8 @@ tags: [guava]
     }
 ```
 
-### list로 만들수도 있다.  
+### list로 만들수도 있다.
+
 ```java
     @Test
     public void splitToListTest() throws Exception {
@@ -30,6 +31,7 @@ tags: [guava]
 ```
 
 ### 공백문자 제거
+
 ```java
     @Test
     public void splitTrimResultTest() throws Exception {
@@ -42,6 +44,7 @@ tags: [guava]
 ```
 
 ### null 오브젝트 제거
+
 ```java
     @Test
     public void splitOmitEmptyTest() throws Exception {

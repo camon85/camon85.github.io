@@ -1,14 +1,13 @@
 ---
-layout: post
 title: guava example - Multimap
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
 [view source](https://github.com/camon85/guava-example)
 
-
 ### 하나의 key에 여러개의 value를 put 할 수 있다.
+
 ```java
   @Test
   public void multimapTest() throws Exception {
@@ -40,6 +39,7 @@ tags: [guava]
 ```
 
 ### Multimap은 Map이 아니다.
+
 Multimap 구현체
 
 - ArrayListMultimap
@@ -56,8 +56,8 @@ Multimap 구현체
 
 - ImmutableSetMultimap
 
-
 ### Multimap을 Map으로 변환하는 방법
+
 ```java
   @Test
   public void asMapTest() throws Exception {
@@ -78,5 +78,3 @@ Multimap 구현체
     System.out.println(stringCollectionMap); // {dev=[jooyong, cjr, devhak, not yet], live=[jn, hs, hb, yi, mn]}
   }
 ```
-
-

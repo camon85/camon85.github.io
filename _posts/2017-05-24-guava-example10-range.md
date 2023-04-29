@@ -1,7 +1,6 @@
 ---
-layout: post
 title: guava example - RangeSet, RangeMap
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
@@ -10,6 +9,7 @@ tags: [guava]
 은근히 써먹을데가 있을 것 같다.
 
 ### RangeSet으로 범위 계산을 간단하게 할 수 있다.
+
 ```java
   @Test
   public void openClosedTest() throws Exception {
@@ -54,6 +54,7 @@ tags: [guava]
 ```
 
 ### complement로 rangeSet의 여집합을 구한다.
+
 ```java
   @Test
   public void complementTest() throws Exception {
@@ -77,8 +78,8 @@ tags: [guava]
   }
 ```
 
-
 ### RangeMap
+
 ```java
   @Test
   public void rangeMap() {
@@ -97,5 +98,3 @@ tags: [guava]
     assertEquals("gold", rangeMap.get(1500));
   }
 ```
-
-

@@ -1,83 +1,106 @@
-<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-     styles, `#sidebar-checkbox` for behavior. -->
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<!--
+  The Side Bar
+-->
 
-<!-- Toggleable sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <div class="sidebar-personal-info">
-      <div class="sidebar-personal-info-section">
-        <img src="{{ site.author.picture }}" title="{{ site.author.name }}" alt="{{ site.author.name }}" />
-      </div>
-      <div class="sidebar-personal-info-section">
-        <p>{{ site.author.name }}</p>
-        <p>{{ site.author.description }}</p>
-      </div>
-      {% if site.author.contact %}
-      {% assign len = site.author.contact | size %}
-      {% assign current_index = 0 %}
-      <div class="sidebar-personal-info-section">
-        <p> Follow me: 
-        {% for contact in site.author.contact %}
-        {% assign iconname = contact[0] %}
-        {% if contact[0] == 'email' %}
-        {% assign iconname = 'envelope' %}
-        {% endif %}
-        <a href="{{ contact[1] }}">
-          <i class="fa fa-{{ iconname }}" aria-hidden="true"></i>
-        </a>
-        {% assign current_index = current_index | plus: 1 %}
-        {% if current_index != len %}|{% endif %}
-        {% endfor %}
-        </p>
-      </div>
-      {% endif %}
-    </div>
-  </div>
-
-  <nav class="sidebar-nav">
-    {% for nav in site.nav %}
-      {% assign is_relative = nav[1][0] | slice: 0 %}
-      {% assign url = nav[1][0] %}
-      {% if is_relative == '/' %}
-        {% assign url = nav[1][0] | prepend: site.baseurl %}
-      {% endif %}
-
-      {% assign sub_len = nav[1] | size | minus: 1 %}
-
-      <span class="{% if sub_len > 0 %}foldable{% endif %}">
-        <a class="sidebar-nav-item {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
-          {{ nav[0] }}
-        </a>
-
-        {% for i in (1..sub_len) %}
-          {% for sub_nav in nav[1][i] %}
-            {% assign sub_is_relative = sub_nav[1] | slice: 0 %}
-            {% assign sub_url = sub_nav[1] %}
-            {% if sub_is_relative == '/' %}
-              {% assign sub_url = sub_nav[1] | prepend: site.baseurl %}
+<div id="sidebar" class="d-flex flex-column align-items-end">
+  <div class="profile-wrapper text-center">
+    <div id="avatar">
+      <a href="{{ '/' | relative_url }}" class="mx-auto">
+        {% if site.avatar != empty and site.avatar %}
+          {% capture avatar_url %}
+            {% if site.avatar contains '://' %}
+              {{ site.avatar }}
+            {% elsif site.img_cdn != empty and site.img_cdn %}
+              {{ site.avatar | prepend: site.img_cdn }}
+            {% else %}
+              {{ site.avatar | relative_url }}
             {% endif %}
-              <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == sub_nav[1] %}active{% endif %}" href="{{ sub_url }}">
-                {{ sub_nav[0] }}
-              </a>
-          {% endfor %}
-        {% endfor %}
-      </span>
+          {% endcapture %}
+          <img src="{{ avatar_url | strip }}" alt="avatar" onerror="this.style.display='none'">
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="site-title">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+    <div class="site-subtitle font-italic">{{ site.tagline }}</div>
+
+  </div><!-- .profile-wrapper -->
+
+  <ul class="w-100">
+
+    <!-- home -->
+    <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>{{ site.data.locales[site.lang].tabs.home | upcase }}</span>
+      </a>
+    </li>
+    <!-- the real tabs -->
+    {% for tab in site.tabs %}
+    <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+      <a href="{{ tab.url | relative_url }}" class="nav-link">
+        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+        {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+
+        <span>{{ site.data.locales[site.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+      </a>
+    </li> <!-- .nav-item -->
+    {% endfor %}
+
+  </ul> <!-- ul.nav.flex-column -->
+
+  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+
+    {% unless site.theme_mode %}
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+      {% endif %}
+    {% endunless %}
+
+    {% for entry in site.data.contact %}
+      {% case entry.type %}
+        {% when 'github', 'twitter' %}
+          {%- capture url -%}
+            https://{{ entry.type }}.com/{{ site[entry.type].username }}
+          {%- endcapture -%}
+        {% when 'email' %}
+          {% assign email = site.social.email | split: '@' %}
+          {%- capture url -%}
+            javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+          {%- endcapture -%}
+        {% when 'rss' %}
+          {% assign url = '/feed.xml' | relative_url %}
+        {% else %}
+          {% assign url = entry.url %}
+      {% endcase %}
+
+      {% if url %}
+      <a href="{{ url }}" aria-label="{{ entry.type }}"
+        {% assign link_types = '' %}
+
+        {% unless entry.noblank %}
+          target="_blank"
+          {% assign link_types = 'noopener noreferrer' %}
+        {% endunless %}
+
+        {% if entry.type == 'mastodon' %}
+          {% assign link_types = link_types | append: ' me' | strip %}
+        {% endif %}
+
+        {% unless link_types == empty %}rel="{{ link_types }}"{% endunless %}>
+
+        <i class="{{ entry.icon }}"></i>
+      </a>
+      {% endif %}
 
     {% endfor %}
 
-    <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
-  </nav>
+  </div> <!-- .sidebar-bottom -->
 
-  <div class="sidebar-item">
-    <p>
-    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
-    </p>
-  </div>
-
-  <div class="sidebar-item">
-    <p>
-    Powered by <a href="http://jekyllrb.com">jekyll</a> and <a href="http://codinfox.github.io">codinfox-lanyon</a>
-    </p>
-  </div>
-</div>
+</div><!-- #sidebar -->

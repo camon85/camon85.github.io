@@ -1,62 +1,71 @@
+---
+layout: compress
+# Default layout
+---
+
 <!DOCTYPE html>
-<html lang="en-us">
+
+{% include assets-origin.html %}
+
+{% capture prefer_mode %}
+  {% if site.theme_mode %}
+    data-mode="{{ site.theme_mode }}"
+  {% endif %}
+{% endcapture %}
+
+<!-- `site.alt_lang` can specify a language different from the UI -->
+<html lang="{{ site.alt_lang | default: site.lang }}"{{ prefer_mode }}>
 
   {% include head.html %}
 
-  <body>
+  <body data-topbar-visible="true">
 
     {% include sidebar.html %}
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}">
-              <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/>
-            </a>
-            <small>{{ site.tagline }}</small>
-          </h3>
-        </div>
-      </div>
+    {% include topbar.html %}
 
-      <div class="container content">
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div id="main" class="container pl-xl-4 pr-xl-4">
         {{ content }}
       </div>
-    </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+      {% include search-results.html %}
 
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
+    </div> <!-- #main-wrapper -->
 
-        document.addEventListener('click', function(e) {
-          var target = e.target;
+    {% include footer.html %}
 
-          if (target === toggle) {
-            checkbox.checked = !checkbox.checked;
-            e.preventDefault();
-          } else if (checkbox.checked && !sidebar.contains(target)) {
-            /* click outside the sidebar when sidebar is open */
-            checkbox.checked = false;
-          }
-        }, false);
-      })(document);
-    </script>
-    {% if site.google_analytics_token %}
-    <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', '{{ site.google_analytics_token }}', 'auto');
-ga('send', 'pageview');
-    </script>
+    {% if page.mermaid %}
+      {% include mermaid.html %}
     {% endif %}
+
+    <div id="mask"></div>
+
+    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    {% if site.pwa.enabled %}
+      <div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+        data-animation="true" data-autohide="false">
+        <div class="toast-header">
+          <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body text-center pt-0">
+          <p class="pl-2 pr-2 mb-3">{{ site.data.locales[site.lang].notification.update_found }}</p>
+          <button type="button" class="btn btn-primary" aria-label="Update">
+            {{ site.data.locales[site.lang].notification.update }}
+          </button>
+        </div>
+      </div>
+    {% endif %}
+
+    {% include search-loader.html %}
+
+    {% include js-selector.html %}
+
   </body>
-  {% if site.disqus_short_name %}
-  <script id="dsq-count-scr" src="//{{ site.disqus_short_name }}.disqus.com/count.js" async></script>
-  {% endif %}
+
 </html>

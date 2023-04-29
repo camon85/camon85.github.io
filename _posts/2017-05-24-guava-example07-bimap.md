@@ -1,13 +1,13 @@
 ---
-layout: post
 title: guava example - BiMap
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
 [view source](https://github.com/camon85/guava-example)
 
 ### plain java의 map의 사용법
+
 ```java
   @Test
   public void mapPutTest() throws Exception {
@@ -25,6 +25,7 @@ tags: [guava]
 ```
 
 ### BiMap에서는 중복되는 값을 put하면 IllegalArgumentException 발생한다.
+
 ```java
   @Test(expected = IllegalArgumentException.class)
   public void biMapAlreadyPresentTest() throws Exception {
@@ -39,6 +40,7 @@ tags: [guava]
 ```
 
 ### forcePut으로 중복되는 값을 put 할 수 있다. 하지만 중복되는 value는 사라진다.
+
 ```java
   @Test
   public void biMapForcePutTest() throws Exception {
@@ -57,6 +59,7 @@ tags: [guava]
 ```
 
 ### key, value가 뒤바뀐 BiMap을 생성
+
 ```java
   @Test
   public void inverseTest() throws Exception {

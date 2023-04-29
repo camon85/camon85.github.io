@@ -1,13 +1,13 @@
 ---
-layout: post
 title: guava example - Joiner
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
 [view source](https://github.com/camon85/guava-example)
 
 ### collection에 null이 포함되어 있으면 NullPointerException이 발생한다.
+
 ```java
     @Test(expected = NullPointerException.class)
     public void joinerNullTest() throws Exception {
@@ -19,6 +19,7 @@ tags: [guava]
 ```
 
 ### null을 무시하는 방법.
+
 ```java
     @Test
     public void joinerSkipNullTest() throws Exception {
@@ -30,7 +31,8 @@ tags: [guava]
     }
 ```
 
-### null 인 경우 특정 값으로 세팅도 가능 
+### null 인 경우 특정 값으로 세팅도 가능
+
 ```java
     @Test
     public void joinerUseForNullTest() throws Exception {
@@ -43,6 +45,7 @@ tags: [guava]
 ```
 
 ### Map을 간단하게 String으로 변경하기
+
 ```java
     @Test
     public void mapJoinerTest() throws Exception {

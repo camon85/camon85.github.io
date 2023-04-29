@@ -1,16 +1,16 @@
 ---
-layout: post
 title: 2. 스칼라로 함수형 프로그래밍 시작하기
-category: functional programming in scala
+categories: [functional programming in scala]
 tags: [scala, fp, study]
 ---
 
 ### 간단한 예제
+
 {% highlight scala %}
 object MyModule {
-  def abs(n: Int): Int = 
-    if (n < 0) - n
-    else n
+def abs(n: Int): Int =
+if (n < 0) - n
+else n
 
     private def formatAbs(x: Int) = {
       val msg = "The absolute value of %d is %d"
@@ -19,6 +19,7 @@ object MyModule {
 
     def main(args: Array[String]): Unit =
       println(formatAbs(-42))
+
 }
 {% endhighlight %}
 
@@ -32,6 +33,7 @@ main메서드는 반드시 String의 Array를 인수로 받아야 하며, 반환
 일반적으로 Unit이라는 것은 그 메서드에 부수 효과가 존재함을 암시한다.
 
 ### 프로그램의 실행
+
 > $ scalac MyModule.scala
 
 이렇게 하면 확장자가 .class인 파일들이 생긴다.
@@ -57,28 +59,28 @@ REPL(read-evaluate-print loop) 모드에서 소스파일을 불러서 실행해 
 
 > res0: Int = 42
 
-
 ### 고차 함수(higher-order function)
+
 함수를 함수에 전달. 함수도 변수에 담거나 함수에 인수로 넘겨줄 수 있다.
 
-
 ### 꼬리 재귀
+
 재귀 호출이 꼬리 위치에서 일어나는 것을 말한다.
 재귀 호출의 결과값 반환 이후에 다른 일을 하지 않는다면 최적화(tail call elimination)가 적용된다.
 매 반복마다 스택을 소모하지 않도록 루프 형태로 컴파일 되게 한다.
 
 {% highlight scala %}
 def factorial(n: Int): Int = {
-  def go(n: Int, acc: Int): Int =
-    if (n <= 0) acc
-    else go(n - 1, n * acc)
+def go(n: Int, acc: Int): Int =
+if (n <= 0) acc
+else go(n - 1, n \* acc)
 
-  go(n, 1)
+go(n, 1)
 }
 {% endhighlight %}
 
-위 예제에서 재귀 호출 go(n - 1, n * acc)는 꼬리 위치에서 일어난다.
-1 + go(n - 1, n * acc) 같은 재귀 호출은 꼬리 호출이 아니다. 
+위 예제에서 재귀 호출 go(n - 1, n _ acc)는 꼬리 위치에서 일어난다.
+1 + go(n - 1, n _ acc) 같은 재귀 호출은 꼬리 호출이 아니다.
 go의 결과에 대해 1을 더하는 일을 수행해야 하기 때문이다.
 
 <div class="message">
@@ -90,15 +92,16 @@ n번째 <a href="https://ko.wikipedia.org/wiki/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9
 <script src="https://gist.github.com/camon85/7465cc1dab36533eee84eaf0484fcf0a.js"></script>
 
 ### 고차 함수 작성
+
 {% highlight scala %}
 object MyModule {
 
-  ...
+...
 
-  def formatResult(n: Int, f: Int => Int): Int = {
-    val msg = "The factorial of %d is %d."
-    msg.format(n, f(n))
-  }
+def formatResult(n: Int, f: Int => Int): Int = {
+val msg = "The factorial of %d is %d."
+msg.format(n, f(n))
+}
 }
 {% endhighlight %}
 
@@ -109,41 +112,39 @@ object MyModule {
 factorial을 f의 인수로서 formatResult에 넘겨줄 수 있다.
 
 ### 단형적 함수(monomorphic function)
+
 {% highlight scala %}
 // String 형식에만 특화되어 있다.
 def findFirst(ss: Array[String], key: String): Int = {
-  @annotation.tailrec
-  def loop(n: Int): Int = 
-    if (n >= ss.length) -1
-    else if (ss(n) == key) n
-    else loop(n + 1)
+@annotation.tailrec
+def loop(n: Int): Int =
+if (n >= ss.length) -1
+else if (ss(n) == key) n
+else loop(n + 1)
 
-  loop(0) // 배열의 첫 요소에서부터 루프를 시작한다.
+loop(0) // 배열의 첫 요소에서부터 루프를 시작한다.
 }
 {% endhighlight %}
 
 ### 다형적 함수(parametric polymorphism)
+
 {% highlight scala %}
 // 임의의 형식 A에 대해 특정 A 값을 점검하는 함수를 인수로 받음
 def findFirst[A](as: Array[A], p: A => Boolean): Int = {
-  @annotation.tailrec
-  def loop(n: Int): Int = 
-    if (n >= as.length) -1
-    else if (p(as(n))) n
-    else loop(n + 1)
+@annotation.tailrec
+def loop(n: Int): Int =
+if (n >= as.length) -1
+else if (p(as(n))) n
+else loop(n + 1)
 
-  loop(0)
+loop(0)
 }
 {% endhighlight %}
 
-
-
 ### 부분 적용(partial application)
+
 32p
 
-
 ### 커링(curring)
-
-
 
 ..작성중

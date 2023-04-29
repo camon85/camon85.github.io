@@ -1,13 +1,13 @@
 ---
-layout: post
 title: guava example - Preconditions
-category: dev
+categories: [dev]
 tags: [guava]
 ---
 
 [view source](https://github.com/camon85/guava-example)
 
 ### 기존의 try catch 문으로 nullpointer를 catch 하는 방법
+
 ```java
     @Test
     public void exceptionTest() throws Exception {
@@ -26,6 +26,7 @@ tags: [guava]
 ```
 
 ### 계산하기 전에 미리 null 체크를 하는 방법
+
 ```java
     @Test(expected=NullPointerException.class)
     public void checkNotNullTest() throws Exception {
@@ -38,6 +39,7 @@ tags: [guava]
 ```
 
 ### expression 검사. a가 검사에 걸림
+
 ```java
     @Test(expected = IllegalArgumentException.class)
     public void checkArgumentTest() throws Exception {
@@ -50,6 +52,7 @@ tags: [guava]
 ```
 
 ### expression 검사. b가 검사에 걸림
+
 ```java
     @Test(expected = IllegalArgumentException.class)
     public void checkArgumentTest2() throws Exception {
@@ -62,6 +65,7 @@ tags: [guava]
 ```
 
 ### expression 검사. a, b 모두 검사를 통과한 경우
+
 ```java
     @Test
     public void checkArgumentTest3() throws Exception {
@@ -74,4 +78,3 @@ tags: [guava]
         Assert.assertTrue(x == 20);
     }
 ```
-    
