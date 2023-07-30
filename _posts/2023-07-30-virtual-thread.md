@@ -29,6 +29,7 @@ tags: [java]
 ---
 #### Why Continuations are Coming to Java 내용 발췌
 - 간단한 예제 코드가 있다.
+
 ```java
 double calcImportantFinance(double x) {
   try {
@@ -47,6 +48,7 @@ double compute(String op, double x);
 ```
 
 - 위 코드를 비동기 코드로 작성해본다.
+
 ```java
 CompletableFuture<Double> calcImportantFinance(double x) {
   return
