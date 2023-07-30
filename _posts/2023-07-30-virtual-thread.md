@@ -4,8 +4,8 @@ categories: [dev]
 tags: [java]
 ---
 ### [JEP 444: Virtual Threads `JAVA 21`](https://openjdk.org/jeps/444)
-가상 쓰레드는 높은 처리량의 동시성 애플리케이션을 쉽게 작성할 수 있는 경량 쓰레드이다.
-Java 플랫폼에 가상 쓰레드가 도입된다.
+- 가상 쓰레드는 높은 처리량의 동시성 애플리케이션을 쉽게 작성할 수 있는 경량 쓰레드이다.
+- Java 플랫폼에 가상 쓰레드가 도입된다.
 
 ## Thread per request 모델
 ![thread-per-request](/assets/img/post/virtual_thread/thread-per-request.png)
@@ -127,8 +127,10 @@ CompletableFuture<Double> calcImportantFinance(double x) {
 - 데이터베이스 연결과 같이 동시성 제한을 위해서는 세마포어를 사용해라 
 - https://www.infoq.com/articles/java-virtual-threads/ 내용 중 이 부분은 잘 이해가 안된다.
 >Virtual threads are so lightweight that it is perfectly OK to create a virtual thread even for short-lived tasks, and counterproductive to try to reuse or recycle them. Indeed, virtual threads were designed with such short-lived tasks in mind, such as an HTTP fetch or a JDBC query.
+
 ##### ThreadLocal 남용
 - 가상 쓰레드의 수가 수백만개까지 많아질 수 있기 때문에 ThreadLocal을 잘못 사용하면 메모리 사용량이 매우 높아질 수 있다.
+
 ##### Avoid pinning
 - Synchronized 를 사용하면 Carrier Thread 전체가 블로킹되어 가상 쓰레드를 unmount 할 수 없게 된다. 이것을 `Pinning` 이라고 한다.
 - 캐리어 쓰레드가 차단되어, 다른 가상 쓰레드에서도 사용할 수 없다.
