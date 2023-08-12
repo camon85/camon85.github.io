@@ -1,9 +1,10 @@
 ---
-title: Virtual thread 살펴보기
+title: Virtual Thread 살펴보기
 categories: [dev]
 tags: [java]
 ---
-### [JEP 444: Virtual Threads `JAVA 21`](https://openjdk.org/jeps/444)
+# Virtual Thread
+- [JEP 444: Virtual Threads `JAVA 21`](https://openjdk.org/jeps/444)
 - 가상 쓰레드는 높은 처리량의 동시성 애플리케이션을 쉽게 작성할 수 있는 경량 쓰레드이다.
 - Java 플랫폼에 가상 쓰레드가 도입된다.
 
@@ -123,23 +124,23 @@ CompletableFuture<Double> calcImportantFinance(double x) {
 - 코드 작성 방식이 달라지지 않고, 디버깅, JVM 프로파일링 도구도 기존과 같은 것을 사용할 수 있다.
 
 ## 주의할 부분
-##### Thread Pool 을 사용하지 마라
+### Thread Pool 을 사용하지 마라
 - 풀링은 안티패턴
 - 가상 쓰레드를 생성하는 것은 작고 가볍기 때문에, 쓰레드 재사용을 위해 풀링하는 것은 좋지 않은 아이디어다.
 - 데이터베이스 연결과 같이 동시성 제한을 위해서는 세마포어를 사용해라 
 - https://www.infoq.com/articles/java-virtual-threads/ 내용 중 이 부분은 잘 이해가 안된다.
 >Virtual threads are so lightweight that it is perfectly OK to create a virtual thread even for short-lived tasks, and counterproductive to try to reuse or recycle them. Indeed, virtual threads were designed with such short-lived tasks in mind, such as an HTTP fetch or a JDBC query.
 
-##### ThreadLocal 남용
+### ThreadLocal 남용
 - 가상 쓰레드의 수가 수백만개까지 많아질 수 있기 때문에 ThreadLocal을 잘못 사용하면 메모리 사용량이 매우 높아질 수 있다.
 
-##### Avoid pinning
+### Avoid pinning
 - Synchronized 를 사용하면 Carrier Thread 전체가 블로킹되어 가상 쓰레드를 unmount 할 수 없게 된다. 이것을 `Pinning` 이라고 한다.
 - 캐리어 쓰레드가 차단되어, 다른 가상 쓰레드에서도 사용할 수 없다.
 	- https://blog.rockthejvm.com/ultimate-guide-to-java-virtual-threads/
 	- 이후 버전에서 해결될 듯하다
 
-### Spring 에서 Virtual thread사용 방법
+## Spring 에서 Virtual thread사용 방법
 서블릿 요청이 가상 쓰레드에서 처리되도록 설정만 하면 된다.
 ```java
 @Bean(TaskExecutionAutoConfiguration.APPLICATION_TASK_EXECUTOR_BEAN_NAME)
