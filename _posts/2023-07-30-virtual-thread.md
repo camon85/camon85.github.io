@@ -27,6 +27,8 @@ tags: [java]
 - 디버깅 어려움 등
 - [Why Continuations are Coming to Java](https://www.youtube.com/watch?v=9vupFNsND6o) 
 
+
+
 ---
 #### Why Continuations are Coming to Java 내용 발췌
 - 간단한 예제 코드가 있다.
@@ -106,8 +108,9 @@ CompletableFuture<Double> calcImportantFinance(double x) {
 
 다른 언어에서는 async-await 기능으로 이를 해결하기도 한다.
 하지만 여전히 다른 스레드에서 실행되기 때문에 stacktrace가 크게 도움이 되지 않을것임
-
 ---
+
+
 
 ## Virtual Thread 구조
 ![virtual-threads](/assets/img/post/virtual_thread/virtual-threads.png)
